@@ -1,9 +1,4 @@
-/* 
-    Reset CSS
-    http://meyerweb.com/eric/tools/css/reset/ 
-    v2.0 | 20110126
-    License: none (public domain)
-*/
+/* Reset CSS */
 
 html,
 body,
@@ -137,25 +132,14 @@ table {
 
 /* Fonts */
 
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Signika+Negative:wght@300..700&display=swap');
 
-.alegreya-sans-regular {
-    font-family: "Alegreya Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.alegreya-sans-medium {
-    font-family: "Alegreya Sans", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-}
-
+/* Variables */
 
 :root {
-    --font-heading: "Alegreya Sans", sans-serif;
-    --font-body: "Roboto", sans-serif;
-    --font-mono: "Fira Code", monospace;
+    --font-heading: "Merriweather Sans", sans-serif;
+    --font-subtitle: "Signika Negative", sans-serif;
+    --font-body: "ABeeZee", sans-serif;
 
     --fw-regular: 400;
     --fw-medium: 500;
@@ -176,56 +160,6 @@ table {
     --spacing-4: 16px;
     --spacing-6: 24px;
     --spacing-8: 32px;
-
-    --md-sys-color-primary: rgb(76 102 43);
-    --md-sys-color-surface-tint: rgb(76 102 43);
-    --md-sys-color-on-primary: rgb(255 255 255);
-    --md-sys-color-primary-container: rgb(205 237 163);
-    --md-sys-color-on-primary-container: rgb(53 78 22);
-    --md-sys-color-secondary: rgb(88 98 73);
-    --md-sys-color-on-secondary: rgb(255 255 255);
-    --md-sys-color-secondary-container: rgb(220 231 200);
-    --md-sys-color-on-secondary-container: rgb(64 74 51);
-    --md-sys-color-tertiary: rgb(56 102 99);
-    --md-sys-color-on-tertiary: rgb(255 255 255);
-    --md-sys-color-tertiary-container: rgb(188 236 231);
-    --md-sys-color-on-tertiary-container: rgb(31 78 75);
-    --md-sys-color-error: rgb(186 26 26);
-    --md-sys-color-on-error: rgb(255 255 255);
-    --md-sys-color-error-container: rgb(255 218 214);
-    --md-sys-color-on-error-container: rgb(147 0 10);
-    --md-sys-color-background: rgb(249 250 239);
-    --md-sys-color-on-background: rgb(26 28 22);
-    --md-sys-color-surface: rgb(249 250 239);
-    --md-sys-color-on-surface: rgb(26 28 22);
-    --md-sys-color-surface-variant: rgb(225 228 213);
-    --md-sys-color-on-surface-variant: rgb(68 72 61);
-    --md-sys-color-outline: rgb(117 121 108);
-    --md-sys-color-outline-variant: rgb(197 200 186);
-    --md-sys-color-shadow: rgb(0 0 0);
-    --md-sys-color-scrim: rgb(0 0 0);
-    --md-sys-color-inverse-surface: rgb(47 49 42);
-    --md-sys-color-inverse-on-surface: rgb(241 242 230);
-    --md-sys-color-inverse-primary: rgb(177 209 138);
-    --md-sys-color-primary-fixed: rgb(205 237 163);
-    --md-sys-color-on-primary-fixed: rgb(16 32 0);
-    --md-sys-color-primary-fixed-dim: rgb(177 209 138);
-    --md-sys-color-on-primary-fixed-variant: rgb(53 78 22);
-    --md-sys-color-secondary-fixed: rgb(220 231 200);
-    --md-sys-color-on-secondary-fixed: rgb(21 30 11);
-    --md-sys-color-secondary-fixed-dim: rgb(191 203 173);
-    --md-sys-color-on-secondary-fixed-variant: rgb(64 74 51);
-    --md-sys-color-tertiary-fixed: rgb(188 236 231);
-    --md-sys-color-on-tertiary-fixed: rgb(0 32 30);
-    --md-sys-color-tertiary-fixed-dim: rgb(160 208 203);
-    --md-sys-color-on-tertiary-fixed-variant: rgb(31 78 75);
-    --md-sys-color-surface-dim: rgb(218 219 208);
-    --md-sys-color-surface-bright: rgb(249 250 239);
-    --md-sys-color-surface-container-lowest: rgb(255 255 255);
-    --md-sys-color-surface-container-low: rgb(243 244 233);
-    --md-sys-color-surface-container: rgb(238 239 227);
-    --md-sys-color-surface-container-high: rgb(232 233 222);
-    --md-sys-color-surface-container-highest: rgb(226 227 216);
 }
 
 /* Media queries */
@@ -245,15 +179,7 @@ table {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1400px) {}
 
-/* display
-justify-content
-flex-direction
-align-items
-width
-height
-margin
-padding
-border */
+/* Main */
 
 .header {
     display: flex;
@@ -263,43 +189,66 @@ border */
     gap: 1rem;
     padding: 2rem 1rem 1rem;
     min-height: 56px;
-    border: solid 1px red;
-    background: var(--md-sys-color-surface-container);
-    color: var(--md-sys-color-on-surface);
-}
-
-.nav__list {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .header__logo img {
-    height: 40px;
+    height: 48px;
 }
 
-.nav__link {
+.header__nav {
+    width: 100%;
+}
+
+.header__nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    list-style: none;
+    width: 100%;
+    background-color: black;
+}
+
+.header__nav-link {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 48px;
-    padding: 0 0.5rem;
     text-decoration: none;
-    color: black;
     cursor: pointer;
-    color: var(--md-sys-color-on-surface-variant);
+    color: white;
+    font-family: var(--font-body);
+    font-size: 1rem;
 }
 
-.nav__link:hover,
-.nav__link:focus {
-    color: var(--md-sys-color-primary);
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
 }
 
-.nav__link--active {
-    background: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
-    border-radius: 4px;
+.features__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    font-family: var(--font-body);
+}
+
+.banner {
+    min-height: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }
