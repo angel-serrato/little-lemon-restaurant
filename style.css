@@ -130,7 +130,29 @@ table {
     border-spacing: 0;
 }
 
-/* Fonts */
+/* Structure */
+
+/*
+    1 - Posicionamiento y visualización general
+        display, visibility, position, top, right, bottom, left, z-index
+    2 - Modelo de caja (Box model)
+        flex, flex-direction, align-items, justify-content, gap
+        width, min-width, max-width
+        height, min-height, max-height
+        margin, padding
+        border, border-radius, box-sizing
+        overflow
+    3 - Tipografía y texto
+        font-family, font-size, font-weight, line-height, letter-spacing
+        color, text-align, text-decoration, text-transform
+    4 - Fondo y decoración
+        background-color, background-image, background-position, background-size
+        box-shadow, opacity
+    5 - Animaciones y transiciones
+        transition, animation 
+*/
+
+/* Import Fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Signika+Negative:wght@300..700&display=swap');
 
@@ -182,73 +204,131 @@ table {
 /* Main */
 
 .header {
+    /* 1. Posicionamiento y display */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    padding: 2rem 1rem 1rem;
+
+    /* 2. Box model */
     min-height: 56px;
+    margin: 1rem;
 }
 
 .header__logo img {
+    /* 2. Box model */
     height: 48px;
 }
 
 .header__nav {
+    /* 2. Box model */
     width: 100%;
 }
 
 .header__nav-list {
+    /* 1. Posicionamiento y display */
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 1rem;
-    list-style: none;
+
+    /* 2. Box model */
     width: 100%;
+    list-style: none;
+
+    /* 4. Decoración */
     background-color: black;
 }
 
 .header__nav-link {
+    /* 1. Posicionamiento y display */
     display: flex;
     align-items: center;
     justify-content: center;
+
+    /* 2. Box model */
     min-height: 48px;
-    text-decoration: none;
-    cursor: pointer;
-    color: white;
+
+    /* 3. Tipografía */
     font-family: var(--font-body);
     font-size: 1rem;
+    color: white;
+    text-decoration: none;
+
+    /* 4. Decoración / interacción */
+    cursor: pointer;
 }
 
 .main {
+    /* 1. Posicionamiento y display */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
-}
 
-.features__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    font-family: var(--font-body);
+    /* 2. Box model */
+    margin: 1rem;
 }
 
 .banner {
-    min-height: 56px;
+    /* 1. Posicionamiento y display */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    /* 2. Box model */
+    height: 240px;
+    min-height: 56px;
+
+    /* 3. Tipografía */
     font-family: var(--font-body);
+
+    /* 4. Decoración */
+    border: solid 2px red;
 }
 
-footer {
+.features {
+    /* 1. Posicionamiento y display */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.features> :first-child {
+    /* 2. Box model */
+    margin-top: 1rem;
+}
+
+.features__item {
+    /* 1. Posicionamiento y display */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    /* 2. Box model */
+    height: 240px;
     padding: 1rem;
+
+    /* 3. Tipografía */
+    font-family: var(--font-body);
+
+    /* 4. Decoración */
+    border: solid 2px green;
+}
+
+.footer {
+    /* 1. Posicionamiento y display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    /* 2. Box model */
+    margin: 1rem;
+
+    /* 4. Decoración */
+    border: solid 2px blue;
 }
