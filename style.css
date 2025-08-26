@@ -1,5 +1,3 @@
-/* Reset CSS */
-
 html,
 body,
 div,
@@ -130,39 +128,10 @@ table {
     border-spacing: 0;
 }
 
-/* Structure */
-
-/*
-    1 - Posicionamiento y visualización general
-        display, visibility, position, top, right, bottom, left, z-index
-    2 - Modelo de caja (Box model)
-        flex, flex-direction, align-items, justify-content, gap
-        width, min-width, max-width
-        height, min-height, max-height
-        margin, padding
-        border, border-radius, box-sizing
-        overflow
-    3 - Tipografía y texto
-        font-family, font-size, font-weight, line-height, letter-spacing
-        color, text-align, text-decoration, text-transform
-    4 - Fondo y decoración
-        background-color, background-image, background-position, background-size
-        box-shadow, opacity
-    5 - Animaciones y transiciones
-        transition, animation 
-*/
-
-/* Variables */
-
 :root {
     --font-heading: "Merriweather Sans", sans-serif;
     --font-subtitle: "Signika Negative", sans-serif;
     --font-body: "ABeeZee", sans-serif;
-
-    --fw-regular: 400;
-    --fw-medium: 500;
-    --fw-bold: 700;
-
     font-size: 16px;
     --text--small: clamp(0.6944rem, 0.6513rem + 0.1919vw, 0.8rem);
     --text--captions: clamp(0.8333rem, 0.7652rem + 0.303vw, 1rem);
@@ -171,125 +140,85 @@ table {
     --text-h3: clamp(1.44rem, 1.2301rem + 0.933vw, 1.9531rem);
     --text-h2: clamp(1.728rem, 1.4362rem + 1.2971vw, 2.4414rem);
     --text-h1: clamp(2.0736rem, 1.6734rem + 1.7785vw, 3.0518rem);
-
     --spacing-1: 4px;
     --spacing-2: 8px;
     --spacing-3: 12px;
     --spacing-4: 16px;
     --spacing-6: 24px;
     --spacing-8: 32px;
+    --color-primary-yellow: #FDD835;
+    --color-primary-variant-yellow: #F9A825;
+    --color-secondary-green: #388E3C;
+    --color-text-dark: #212121;
+    --color-text-light: #FFFFFF;
+    --color-background: #FFFFFF;
 }
 
-/* Media queries */
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (min-width: 576px) {}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 768px) {}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 992px) {}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 1200px) {}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1400px) {}
-
-/* Main */
-
 .header {
-    /* 1. Posicionamiento y display */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-
-    /* 2. Box model */
-    min-height: 56px;
-    padding-top: 2rem;
+    margin-top: 3rem;
+    background-color: var(--color-background);
 }
 
 .header__logo img {
-    /* 2. Box model */
     height: 48px;
 }
 
 .header__nav {
-    /* 2. Box model */
     width: 100%;
 }
 
 .header__nav-list {
-    /* 1. Posicionamiento y display */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     gap: 1rem;
-
-    /* 2. Box model */
     width: 100%;
-    list-style: none;
-
-    /* 4. Decoración */
-    background-color: black;
+    background-color: var(--color-secondary-green);
 }
 
 .header__nav-link {
-    /* 1. Posicionamiento y display */
     display: flex;
     align-items: center;
     justify-content: center;
-
-    /* 2. Box model */
     min-height: 48px;
-
-    /* 3. Tipografía */
     font-family: var(--font-body);
     font-size: 1rem;
-    color: white;
+    color: var(--color-text-light);
     text-decoration: none;
-
-    /* 4. Decoración / interacción */
     cursor: pointer;
 }
 
+.header__nav-link:hover {
+    color: var(--color-primary-yellow);
+}
+
 .main {
-    /* 1. Posicionamiento y display */
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    /* 2. Box model */
     margin: 1rem;
 }
 
 .banner {
-    /* 1. Posicionamiento y display */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-
-    /* 2. Box model */
     height: 240px;
     padding: 1rem;
-
-    /* 3. Tipografía */
-    font-family: var(--font-body);
-    color: white;
-    font-size: var(--text-h2);
+    border-radius: 16px;
+    color: var(--color-text-light);
     text-align: center;
-
-    /* 4. Decoración */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 16px;
 }
 
 .banner__title {
@@ -300,46 +229,36 @@ table {
 
 .banner__text {
     font-family: var(--font-subtitle);
-    font-size: 1rem;
+    font-size: var(--text-paragraph);
 }
 
 .features {
-    /* 1. Posicionamiento y display */
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
 .features> :first-child {
-    /* 2. Box model */
     margin-top: 1rem;
 }
 
 .features__item {
-    /* 1. Posicionamiento y display */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 1rem;
     align-items: center;
-
-    /* 2. Box model */
     height: 240px;
     padding: 1rem;
-
-    /* 3. Tipografía */
-    font-family: var(--font-body);
-
-    /* 4. Decoración */
-    background-color: black;
     border-radius: 16px;
-    color: white;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.features__item {
+    font-family: var(--font-body);
+    color: var(--color-text-light);
+    background-color: var(--color-secondary-green);
+    text-align: center;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .features__item:nth-child(1) {
@@ -354,19 +273,25 @@ table {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1615776649547-038afe604c5f?q=80&w=1170&auto=format&fit=crop");
 }
 
+.features__title {
+    font-size: var(--text-h2);
+    font-family: var(--font-heading);
+}
+
+.features__description {
+    font-size: var(--text-paragraph);
+    text-align: center;
+}
+
 .footer {
-    /* 1. Posicionamiento y display */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-
-    /* 4. Decoración */
-    color: white;
-    background-color: black;
-
     font-family: var(--font-heading);
+    color: var(--color-text-light);
+    background-color: var(--color-secondary-green);
 }
 
 .footer__logo img {
@@ -378,5 +303,39 @@ table {
 }
 
 .footer> :last-child {
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
+
+@media only screen and (min-width: 576px) {}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+    .main {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        margin: 2rem auto;
+        max-width: 900px;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    .features> :first-child {
+        margin-top: 0;
+    }
+
+    .features {
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: space-between;
+    }
+
+    .features__item {
+        flex: 1;
+    }
+}
+
+@media only screen and (min-width: 1400px) {}
